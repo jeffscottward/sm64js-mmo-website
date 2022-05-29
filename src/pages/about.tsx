@@ -68,98 +68,84 @@ const About = () => {
             </b>
           </Themed.p>
           <Themed.p>
-            <div>
-              <b>
-                <a href="https://github.com/Emill/n64-fast3d-engine">
-                  N64 Fast 3D Renderer
-                </a>
-              </b>
-              <div>
-                OpenGL Implementation of a 3D renderer for the Nintendo 64's graphics
-              </div>
-              <p sx={{mt: 0}}>
-                <small>
-                  <i>Snuffy had to reimplement this in Javascript and WebGL</i>
-                </small>
-              </p>
-            </div>
+            <b>
+              <a href="https://github.com/Emill/n64-fast3d-engine">
+                N64 Fast 3D Renderer
+              </a>
+            </b>
+            <br />
+            <span>
+              OpenGL Implementation of a 3D renderer for the Nintendo 64's graphics
+            </span>
+            <small>
+              <i>Snuffy had to reimplement this in Javascript and WebGL</i>
+            </small>
           </Themed.p>
           <Themed.p>
-            <div>
-              <b>
-                <a href="https://github.com/djoslin0/sm64ex-coop">Super Mario 64 Coop</a>
-              </b>
-              <div>
-                Online cooperative multiplayer mod for SM64, aiming to synchronize all
-                entities and every level for two players.
-              </div>
-              <p sx={{mt: 0}}>
-                <small>
-                  <i>
-                    Special thanks to <a href="https://github.com/djoslin0">djoslin0</a>,
-                    the developer of this project, for consultation and advice on the
-                    implementation of multiplayer for sm64js. I also ported some code from
-                    this project directly
-                  </i>
-                </small>
-              </p>
-            </div>
+            <b>
+              <a href="https://github.com/djoslin0/sm64ex-coop">Super Mario 64 Coop</a>
+            </b>
+            <span>
+              Online cooperative multiplayer mod for SM64, aiming to synchronize all
+              entities and every level for two players.
+            </span>
+            <br />
+            <small>
+              <i>
+                Special thanks to <a href="https://github.com/djoslin0">djoslin0</a>, the
+                developer of this project, for consultation and advice on the
+                implementation of multiplayer for sm64js. I also ported some code from
+                this project directly
+              </i>
+            </small>
           </Themed.p>
-          <div>
-            <Themed.h3>Other Libraries</Themed.h3>
-          </div>
-          <div>
-            <ul>
-              <li>
-                <a href="https://jeremyckahn.github.io/keydrown/">Keydrown</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <Themed.h3>Special Thanks</Themed.h3>
-          </div>
-          <div>
-            <ul>
-              <li>
-                <a href="https://github.com/djoslin0">djoslin0</a>
-              </li>
-              <li>
-                <a href="https://github.com/yandeu">Yannick</a>
-              </li>
-              <li>
-                <a href="https://github.com/josegonzalez">Jose Diaz-Gonzalez</a>
-              </li>
-              <li>
-                <a href="https://github.com/Emill">Emill</a>
-              </li>
-              <li>
-                <a href="https://linktr.ee/Render96">Render96</a>
-              </li>
-              <li>
-                <a href="https://www.deviantart.com/fsuarez913/art/Super-Mario-256-FONT-312162535">
-                  fsuarez913
-                </a>
-              </li>
-              <li>
-                <a href="https://fontstruct.com/fontstructions/show/866471/mario_64_textbox">
-                  TheMH
-                </a>
-              </li>
-              <li>
-                <a href="https://maly.io/@Troll/733515">Troll</a>
-              </li>
-              <li>
-                <a href="https://twitter.com/YinyangGio14">YinyangGio</a>
-              </li>
-            </ul>
-          </div>
+          <Themed.h3>Other Libraries</Themed.h3>
+          <ul>
+            <li>
+              <a href="https://jeremyckahn.github.io/keydrown/">Keydrown</a>
+            </li>
+          </ul>
+          <Themed.h3>Special Thanks</Themed.h3>
+          <ul>
+            <li>
+              <a href="https://github.com/djoslin0">djoslin0</a>
+            </li>
+            <li>
+              <a href="https://github.com/yandeu">Yannick</a>
+            </li>
+            <li>
+              <a href="https://github.com/josegonzalez">Jose Diaz-Gonzalez</a>
+            </li>
+            <li>
+              <a href="https://github.com/Emill">Emill</a>
+            </li>
+            <li>
+              <a href="https://linktr.ee/Render96">Render96</a>
+            </li>
+            <li>
+              <a href="https://www.deviantart.com/fsuarez913/art/Super-Mario-256-FONT-312162535">
+                fsuarez913
+              </a>
+            </li>
+            <li>
+              <a href="https://fontstruct.com/fontstructions/show/866471/mario_64_textbox">
+                TheMH
+              </a>
+            </li>
+            <li>
+              <a href="https://maly.io/@Troll/733515">Troll</a>
+            </li>
+            <li>
+              <a href="https://twitter.com/YinyangGio14">YinyangGio</a>
+            </li>
+          </ul>
           <Themed.h3>Contact</Themed.h3>
-          <Themed.p>
+          <div>
             Questions? Suggestions? Want to help with this project? Check our{' '}
             <a target="_BLANK" href="https://discord.gg/7UaDnJt">
               Discord
             </a>
-          </Themed.p>
+          </div>
         </div>
       </Content>
     </Layout>

@@ -15,9 +15,10 @@ const Header = () => {
         padding: '1em',
         background: '#333',
         boxShadow: '0 0 5px rgba(0, 0, 0, 0.5)',
+        zIndex: '50',
         li: {
           display: 'flex',
-          alignItems: 'center'
+          alignItems: 'center',
         },
         a: {
           display: 'flex',
@@ -42,7 +43,6 @@ const Header = () => {
             },
           },
         },
-        zIndex: '50',
         '.menu': {
           display: 'flex',
           flexDirection: 'row',
