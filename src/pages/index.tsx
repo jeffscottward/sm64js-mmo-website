@@ -12,16 +12,16 @@ import { useAccount } from 'wagmi'
 import Modal from '../components/Modal'
 
 // images
-import ArrowImg from '../../public/images/arrow-back.svg'
-import CheckImg from '../../public/images/check-circle.svg'
-import CloseImg from '../../public/images/close.svg'
-import FailImg from '../../public/images/fail.svg'
-import GithubImg from '../../public/images/github.svg'
-import LinkImg from '../../public/images/link.svg'
-import LoadingImg from '../../public/images/loading.svg'
-import MagnifyingImg from '../../public/images/magnifying-glass.svg'
-import OutboundImg from '../../public/images/outbound.svg'
-import UserImg from '../../public/images/user.svg'
+import ArrowImg from '../../public/images/icons/arrow-back.svg'
+import CheckImg from '../../public/images/icons/check-circle.svg'
+import CloseImg from '../../public/images/icons/close.svg'
+import FailImg from '../../public/images/icons/fail.svg'
+import GithubImg from '../../public/images/icons/github.svg'
+import LinkImg from '../../public/images/icons/link.svg'
+import LoadingImg from '../../public/images/icons/loading.svg'
+import MagnifyingImg from '../../public/images/icons/magnifying-glass.svg'
+import OutboundImg from '../../public/images/icons/outbound.svg'
+import UserImg from '../../public/images/icons/user.svg'
 
 const Home = () => {
   const [modalVisible, setModalVisible] = useState(false)
