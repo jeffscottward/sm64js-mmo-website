@@ -7,10 +7,11 @@ const Content = ({ children }: {
       className="Content"
       sx={{
         width: '100%',
-        maxWidth: '1400px',
-        margin: '0 auto',
+        maxWidth: '1200px',
+        my: [0,4],
+        mx: 'auto',
         p: 4,
-        pb: 0,
+        bg: 'rgba(255,255,255,.9)'
       }}
     > 
       {children}

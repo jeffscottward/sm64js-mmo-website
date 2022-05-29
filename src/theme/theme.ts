@@ -9,6 +9,7 @@ export const theme: Theme = {
     body: '"Inter", sans-serif',
     heading: '"Montserrat", sans-serif',
     monospace: '"Roboto Mono", monospace',
+    textbox: 'TextBoxFont'
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
@@ -64,6 +65,7 @@ export const theme: Theme = {
       fontSmoothing: 'antialiased',
       WebkitFontSmoothing: 'antialiased',
       textShadow: 'rgba(0, 0, 0, 0.01) 0 0 0.0625rem',
+      background: "url('/images/backgrounds/sm64js-background.png')",
       '*, *::before, *::after': {
         boxSizing: 'border-box',
         position: 'relative',
@@ -101,6 +103,11 @@ export const theme: Theme = {
         margin: 0,
         padding: 0,
         listStyle: 'none',
+        a: {
+          '&:hover': {
+            textDecoration: 'underline',
+          },
+        },
       },
       'a, Button, [type="Button"], [type="reset"], [type="submit"], [type="file"], [type="file"]::-webkit-file-upload-Button':
         {
@@ -110,6 +117,7 @@ export const theme: Theme = {
         },
       'a, a:visited, a:active': {
         textDecoration: 'none',
+        color: 'primary00',
       },
       'img, svg, picture, span, a, b, u, i, small, sub, strong, label': {
         display: 'inline-block',
@@ -139,15 +147,16 @@ export const theme: Theme = {
       },
     },
     h1: {
-      marginTop: '0',
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
       fontSize: 5,
+      '&:first-child': {
+        marginTop: 0,
+      },
     },
     h2: {
-      marginTop: '0',
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
@@ -155,7 +164,6 @@ export const theme: Theme = {
       fontSize: 4,
     },
     h3: {
-      marginTop: '0',
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
@@ -163,7 +171,6 @@ export const theme: Theme = {
       fontSize: 3,
     },
     h4: {
-      marginTop: '0',
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
@@ -171,7 +178,6 @@ export const theme: Theme = {
       fontSize: 2,
     },
     h5: {
-      marginTop: '0',
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
@@ -179,7 +185,6 @@ export const theme: Theme = {
       fontSize: 1,
     },
     h6: {
-      marginTop: '0',
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
@@ -192,10 +197,18 @@ export const theme: Theme = {
       fontFamily: 'body',
       fontWeight: 'body',
       lineHeight: 'body',
+      a: {
+        '&:hover': {
+          textDecoration: 'underline',
+        },
+      },
     },
-    a: {
-      color: 'primary',
-      textDecoration: 'none',
+    b: {
+      a: {
+        '&:hover': {
+          textDecoration: 'underline',
+        },
+      },
     },
     pre: {
       mt: 0,

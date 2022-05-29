@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui **/
 import { Flex, Button, Themed } from 'theme-ui'
-import Close from '../../public/images/close.svg'
+import Close from '../../public/images/icons/close.svg'
 
 const Modal = ({ screen = 'default', close }: { screen?: string; close: () => void }) => {
   return (
@@ -62,8 +62,6 @@ const Modal = ({ screen = 'default', close }: { screen?: string; close: () => vo
               <Themed.h1
                 sx={{
                   color: 'white',
-                  fontSize: '2.75rem',
-                  fontWeight: 'bold',
                   pt: 4,
                   mb: 2,
                 }}
@@ -75,7 +73,6 @@ const Modal = ({ screen = 'default', close }: { screen?: string; close: () => vo
                   maxWidth: '80%',
                   color: 'white',
                   pb: 3,
-                  fontSize: '1.25rem',
                   textAlign: 'center',
                 }}
               >

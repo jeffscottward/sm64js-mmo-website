@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'theme-ui'
+import { Global, css } from '@emotion/react'
 import theme from '../theme/theme'
 import 'animate.css/animate.css'
 import Head from 'next/head'
@@ -14,6 +15,16 @@ function App({ Component, pageProps }: AppProps) {
     <StateProvider>
       <RainbowWagmiProvider>
         <ThemeProvider theme={theme}>
+          <Global
+            styles={css`
+              @font-face {
+                font-family: 'TextBoxFont';
+                font-style: normal;
+                font-weight: 400;
+                src: url('/fonts/mario-64-textbox-theme.ttf') format('truetype');
+              }
+            `}
+          />
           <Head>
             <title>DAPP BASE</title>
           </Head>
