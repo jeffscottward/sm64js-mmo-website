@@ -1,4 +1,5 @@
 /** @jsxImportSource theme-ui **/
+import $ from '../utils/selector'
 
 const OptionsBox = () => {
   return (
@@ -86,7 +87,7 @@ const OptionsBox = () => {
           {/* <!-- Emote menu --> */}
           <div className="emoteMenu">
             <h1>Emote menu</h1>
-            <div>
+            <div sx={{ img: { maxWidth: '30px' } }}>
               <img
                 onClick={() => {
                   $('#chatbox').value += ':blj:'

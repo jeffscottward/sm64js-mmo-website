@@ -26,7 +26,7 @@ const ControlsBox = () => {
           </div>
           <h6 id="noGamepadMessage">No Gamepad Detected Yet, Try Pressing a Button</h6>
           <div id="controlsFlex">
-            <div id="keyboardControlsWindow">
+            <div id="keyboardControlsWindow" sx={{display: 'flex'}}>
               {/* <!-- Keyboard control list --> */}
               <div>
                 <div>
@@ -196,15 +196,10 @@ const ControlsBox = () => {
               <div>
                 <div id="gamepadMessageDiv">
                   <h6 id="gamepadMessage"></h6>
-                  <h6 id="gamepadMessage">
-                    Is your gamepad not working correctly? Contact me so I can support
-                    more gamepads. Discord: snuffysasa#2779 /
-                    <a href="https://github.com/sm64js/sm64js/issues">Github</a>
-                  </h6>
                 </div>
               </div>
               {/* <!-- Gamepad controls list --> */}
-              <div id="gamepadFlex">
+              <div id="gamepadFlex" sx={{display: 'flex'}}>
                 <div>
                   <div>
                     <label>Start:</label>

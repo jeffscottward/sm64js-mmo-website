@@ -1,4 +1,5 @@
 /** @jsxImportSource theme-ui **/
+import $ from '../utils/selector'
 
 const CustomSkinMenu = () => {
   return (
