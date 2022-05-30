@@ -25,6 +25,12 @@ const SM64Button = ({
     case 'yellow':
       btnColor = 'url(/images/buttons/btn-yellow-edit.png)'
       break
+    case 'red':
+      btnColor = 'url(/images/buttons/btn-red-edit.png)'
+      break
+    case 'stone':
+      btnColor = 'url(/images/buttons/btn-red-edit.png)'
+      break
     default:
       break
   }
@@ -57,7 +63,7 @@ const SM64Button = ({
           borderWidth: '5px',
           padding: '0.1em 0.5em',
           backgroundClip: 'padding-box',
-          fontFamily: 'textbox'
+          fontFamily: 'textbox',
         }}
       >
         {children}

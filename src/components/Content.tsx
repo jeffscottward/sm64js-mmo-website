@@ -7,7 +7,7 @@ const Content = ({ children }: {
       className="Content"
       sx={{
         width: '100%',
-        maxWidth: '1200px',
+        maxWidth: '1080px',
         my: [0,4],
         mx: 'auto',
         p: 4,
