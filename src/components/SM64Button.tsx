@@ -5,11 +5,15 @@ const SM64Button = ({
   color,
   onClick,
   id,
+  disabled,
+  pressed
 }: {
   children?: string
   color: string
   onClick: () => void
   id?: string
+  disabled?: boolean
+  pressed?: boolean
 }) => {
   let btnColor
   switch (color) {
@@ -32,10 +36,12 @@ const SM64Button = ({
       btnColor = 'url(/images/buttons/btn-red-edit.png)'
       break
     default:
+      btnColor = 'none'
       break
   }
   return (
     <button
+      disabled={disabled}
       onClick={onClick}
       id={id}
       sx={{
@@ -49,16 +55,16 @@ const SM64Button = ({
         cursor: 'pointer',
         padding: '0',
         height: 'fit-content',
-        background: 'none',
-        backgroundColor: 'green',
-        backgroundSize: '100% 100%',
-        backgroundImage: btnColor,
+        background: `${btnColor} 100% 100%`,
       }}
     >
       <div
         sx={{
-          borderColor:
-            'hsla(0,0%,94.1%,.3411764705882353) hsla(0,0%,94.1%,.3411764705882353) rgba(49,49,49,.7215686274509804) rgba(49,49,49,.7215686274509804)',
+          // borderColor:
+          //
+          borderColor: pressed
+            ? 'hsla(0,0%,94.1%,.3411764705882353) hsla(0,0%,94.1%,.3411764705882353) hsla(0,0%,94.1%,.3411764705882353) hsla(0,0%,94.1%,.3411764705882353)'
+            : 'hsla(0,0%,94.1%,.3411764705882353) hsla(0,0%,94.1%,.3411764705882353) rgba(49,49,49,.7215686274509804) rgba(49,49,49,.7215686274509804)',
           borderStyle: 'solid',
           borderWidth: '5px',
           padding: '0.1em 0.5em',

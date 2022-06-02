@@ -1,10 +1,43 @@
 export function dappReducer(state, action) {
-  console.log(state, action)
   switch (action.type) {
-    case 'SET_TEST_DATA':
-      return { ...state.dapp, ...{ test: action.payload } }
+    case 'SET_HUDHidden':
+      return {
+        ...state.sm64js,
+        ...{
+          HUDHidden: action.payload,
+        },
+      }
+
     default:
-      return state.dapp
+      return state.sm64js
+  }
+}
+
+export function myMarioReducer(state, action) {
+  switch (action.type) {
+    case 'SET_freezeCamera':
+      return {
+        ...state.myMario,
+        ...{
+          freezeCamera: action.payload,
+        },
+      }
+    default:
+      return state.myMario
+  }
+}
+
+export function miscReducer(state, action) {
+  switch (action.type) {
+    case 'SET_pvp':
+      return {
+        ...state.misc,
+        ...{
+          pvp: action.payload,
+        },
+      }
+    default:
+      return state.misc
   }
 }
 
@@ -15,8 +48,11 @@ export default function mainReducer(state, action) {
 
   // Finally return map of **ALL** stateObjects
   // stateObject: resulting state of a reducer function after passing in former state and action
+  console.log({ states: state }, { action: action })
   return {
-    dapp: dappReducer(state, action),
+    sm64js: dappReducer(state, action),
+    myMario: myMarioReducer(state, action),
+    misc: miscReducer(state, action),
     //anotherStateObject0: dappReducer(state, action),
     //anotherStateObject1: dappReducer(state, action)
   }

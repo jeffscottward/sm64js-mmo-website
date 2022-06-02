@@ -2,20 +2,18 @@
 
 const GameCanvasContainer = () => {
   return (
-    <div id="gameContainer">
-      <div id="relativePositioner">
-        <div id="moveLeft">
-          <canvas id="textCanvas"></canvas>
-          {/* ><!-- HUD, NOT CHAT --> */}
-          <canvas id="fxCanvas"></canvas>
-          {/* ><!-- Snow --> */}
-          <div id="canvasContainer"></div>
-          <canvas id="gameCanvas" width="1280" height="720"></canvas>
-        </div>
+    <div id="gameContainer" sx={{ display: 'flex' }}>
+      <div sx={{ flex: 8}}>
+        <canvas id="textCanvas" hidden></canvas>
+        {/* ><!-- HUD, NOT CHAT --> */}
+        <canvas id="fxCanvas" hidden ></canvas>
+        {/* ><!-- Snow --> */}
+        <div id="canvasContainer"></div>
+        <canvas id="gameCanvas" width="1280" height="720"></canvas>
       </div>
       {/* <!-- Chat container --> */}
-      <div id="chatContainer">
-        <ul id="chatlog"></ul>
+      <div id="chatContainer" sx={{ flex: 2, display: 'flex', flexDirection: 'column'}}>
+        <ul id="chatlog" sx={{ flex: 1, bg: 'gold'}}></ul>
         <input
           id="chatbox"
           className="chatbox"

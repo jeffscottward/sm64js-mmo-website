@@ -2,7 +2,7 @@
 
 const ProjectInfo = () => {
   return (
-    <details>
+    <details sx={{ cursor: 'pointer'}}>
       <summary>This project is currently still being developed.</summary>
       <p>
         This project is currently still being developed. This page may be live from time
