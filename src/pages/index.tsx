@@ -119,6 +119,7 @@ const Home = () => {
           </section>
           <canvas hidden id="fullCanvas" width="1280" height="720"></canvas>
         </div>
+        <br/><br/><br/><br/>
       </Content>
     </Layout>
   )

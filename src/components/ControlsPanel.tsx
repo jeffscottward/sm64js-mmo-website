@@ -1,33 +1,45 @@
 /** @jsxImportSource theme-ui **/
+import SM64Button from './SM64Button'
 
 const ControlsPanel = () => {
   return (
-    <div id="controlsBorder" sx={{ bg: 'green'}}>
-      <h1  sx={{ my: 0 }}>Controls</h1>
+    <div
+      id="controlsBorder"
+      sx={{
+        backgroundImage: 'url("/images/backgrounds/green-background.png")',
+      }}
+    >
+      <h1 sx={{ my: 0 }}>Controls</h1>
       {/* <!-- Save & reset controls button --> */}
       <div className="controlButtons">
-        <button
-          className="green-button"
-          onClick={() => {
-            window.saveControls()
-          }}
-        >
-          <div className="sm64button">Save Controls</div>
-        </button>
-        <button
-          className="red-button"
-          onClick={() => {
-            window.loadDefaultControls()
-          }}
-        >
-          <div className="sm64button">Load Default Controls</div>
-        </button>
+        <SM64Button id="playerNameButton" color="green" onClick={() => {window.saveControls()}}>
+          Save Controls
+        </SM64Button>
+        <SM64Button id="playerNameButton" color="red" onClick={() => {window.loadDefaultControls()}}>
+          Load Default Controls
+        </SM64Button>
       </div>
-      <h6 id="noGamepadMessage">No Gamepad Detected Yet, Try Pressing a Button</h6>
+      <h4 id="noGamepadMessage">No Gamepad Detected - Try Pressing a Button</h4>
       <div id="controlsFlex">
-        <div id="keyboardControlsWindow" sx={{ display: 'flex' }}>
-          {/* <!-- Keyboard control list --> */}
-          <div>
+        <div
+          id="keyboardControlsWindow"
+          sx={{
+            display: 'flex',
+            section: {
+              display: 'flex',
+              flexDirection: 'column',
+              flex: 1,
+              mx: 2,
+              '> div': {
+                display: 'flex',
+                justifyContent: 'space-between',
+                borderBottom: '1px solid #ccc',
+                my: 1,
+              },
+            },
+          }}
+        >
+          <section>
             <div>
               <label>Start:</label>
               <select
@@ -64,8 +76,8 @@ const ControlsPanel = () => {
                 }}
               ></select>
             </div>
-          </div>
-          <div>
+          </section>
+          <section>
             <div>
               <label>Up:</label>
               <select
@@ -102,8 +114,8 @@ const ControlsPanel = () => {
                 }}
               ></select>
             </div>
-          </div>
-          <div>
+          </section>
+          <section>
             <div>
               <label>C-Up:</label>
               <select
@@ -140,8 +152,8 @@ const ControlsPanel = () => {
                 }}
               ></select>
             </div>
-          </div>
-          <div>
+          </section>
+          <section>
             <div>
               <label>Minimap:</label>
               <select
@@ -187,7 +199,7 @@ const ControlsPanel = () => {
                 }}
               ></select>
             </div>
-          </div>
+          </section>
         </div>
         {/* <!-- Gamepad controls pop up --> */}
         <div id="gamepadControlsWindow">
@@ -198,8 +210,25 @@ const ControlsPanel = () => {
             </div>
           </div>
           {/* <!-- Gamepad controls list --> */}
-          <div id="gamepadFlex" sx={{ display: 'flex' }}>
-            <div>
+          <div
+            id="gamepadFlex"
+            sx={{
+              display: 'flex',
+              section: {
+                display: 'flex',
+                flexDirection: 'column',
+                flex: 1,
+                mx: 2,
+                '> div': {
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  borderBottom: '1px solid #ccc',
+                  my: 1,
+                },
+              },
+            }}
+          >
+            <section>
               <div>
                 <label>Start:</label>
                 <select
@@ -236,7 +265,10 @@ const ControlsPanel = () => {
                   }}
                 ></select>
               </div>
-              <div>
+            
+            </section>
+            <section>
+            <div>
                 <label>axisX:</label>
                 <select
                   name="stickX"
@@ -254,8 +286,6 @@ const ControlsPanel = () => {
                   }}
                 ></select>
               </div>
-            </div>
-            <div>
               <div>
                 <label>C-axisX:</label>
                 <select
@@ -274,8 +304,11 @@ const ControlsPanel = () => {
                   }}
                 ></select>
               </div>
-              <div>
-                <label>deadZone:</label>
+             
+            </section>
+            <section>
+            <div>
+                <label>Dead zone:</label>
                 <input
                   type="number"
                   value="0.3"
@@ -315,41 +348,9 @@ const ControlsPanel = () => {
                   }}
                 ></select>
               </div>
-            </div>
+            </section>
           </div>
         </div>
-      </div>
-      {/* <!-- Controls and customization --> */}
-      <div id="greenControls">
-        <button
-          type="button"
-          className="yellow-button"
-          data-placement="bottom"
-          onClick={() => {
-            window.switchbox()
-          }}
-        >
-          <div className="sm64button">Return</div>
-        </button>
-        <button
-          type="button"
-          className="blue-button"
-          onClick={() => {
-            window.switchbox('optionsbox')
-          }}
-        >
-          <div className="sm64button">Options & Misc</div>
-        </button>
-        <button
-          type="button"
-          className="pink-button"
-          onClick={() => {
-            window.switchbox('customizebox')
-            window.updateWheel()
-          }}
-        >
-          <div className="sm64button">Customize Character / Skin</div>
-        </button>
       </div>
     </div>
   )

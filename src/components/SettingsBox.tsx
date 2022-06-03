@@ -19,7 +19,9 @@ const SettingsBox = ({ showSettings }: { showSettings?: boolean }) => {
         height: '100%',
       }}
     >
-      <nav sx={{ display: 'flex', '> *': { display: 'block', bg: 'white', width: '100%' } }}>
+      <nav
+        sx={{ display: 'flex', '> *': { display: 'block', bg: 'white', width: '100%' } }}
+      >
         <SM64Button
           data-placement="bottom"
           color="yellow"
@@ -65,7 +67,16 @@ const SettingsBox = ({ showSettings }: { showSettings?: boolean }) => {
           Music
         </SM64Button>
       </nav>
-      <div className="panels">
+      <div
+        className="panels"
+        sx={{
+          '> *': {
+            backgroundSize: '100% 100%',
+            p: 3,
+            color: 'white'
+          },
+        }}
+      >
         {currentPanel === 'general' ? <GeneralPanel /> : null}
         {currentPanel === 'controls' ? <ControlsPanel /> : null}
         {currentPanel === 'options' ? <OptionsPanel /> : null}

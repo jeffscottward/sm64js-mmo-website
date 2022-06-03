@@ -5,7 +5,42 @@ import SM64Button from './SM64Button'
 import ToggleSwitch from './ToggleSwitch'
 import { useStateValue } from '../state/state'
 import { Flex, Themed } from 'theme-ui'
-import SettingsNav from './SettingsNav'
+import Select from 'react-select'
+
+const mapoptions = [
+  {
+    label: 'Vanilla maps',
+    options: [
+      { value: 16, label: "Castle Grounds" },
+      { value: 6, label: "Castle Inside First Level" },
+      { value: 602, label: "Castle Inside Second Level" },
+      { value: 26, label: "Castle Courtyard" },
+      { value: 9, label: "Bob-omb Battlefield" },
+      { value: 24, label: "Whomp's Fortress" },
+      { value: 5, label: "Cool, Cool Mountain" },
+      { value: 56, label: "Cool, Cool Mountain Slide" },
+      { value: 27, label: "Princess's Secret Slide" },
+      { value: 29, label: "Tower of the Wing Cap" },
+      { value: 4, label: "Big Boo's Haunt" },
+      { value: 7, label: "Hazy Maze Cave" },
+      { value: 8, label: "Shifting Sand Land" },
+      { value: 36, label: "Tall, Tall Mountain" },
+      { value: 10, label: "Snowman's Land" }
+    ]
+  },
+  {
+    label: 'Custom maps',
+    options: [
+      { value: "1000", label: "Mushroom Battlefield"},
+      { value: "1004", label: "Mushroom Raceway"},
+      { value: "1006", label: "Dolphin Town"},
+      { value: "1001", label: "CTF/Race Map"},
+      { value: "1002", label: "Starman Fortress"},
+      { value: "1003", label: "Glider Jungle"},
+      { value: "999", label: "Clouded Ruins"},
+    ],
+  },
+]
 
 const SignInSection = () => {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -38,49 +73,23 @@ const SignInSection = () => {
         </>
       ) : (
         <div>
-          <div>
             <label htmlFor="mapSelect">Select Map: </label>
-            <select id="mapSelect">
-              <optgroup label="Vanilla maps">
-                <option value="16">Castle Grounds</option>
-                <option value="6">Castle Inside First Level</option>
-                <option value="602">Castle Inside Second Level</option>
-                <option value="26">Castle Courtyard</option>
-                <option value="9">Bob-omb Battlefield</option>
-                <option value="24">Whomp's Fortress</option>
-                <option value="5">Cool, Cool Mountain</option>
-                <option value="56">Cool, Cool Mountain Slide</option>
-                <option value="27">Princess's Secret Slide</option>
-                <option value="29">Tower of the Wing Cap</option>
-                <option value="4">Big Boo's Haunt</option>
-                <option value="7">Hazy Maze Cave</option>
-                <option value="8">Shifting Sand Land</option>
-                <option value="36">Tall, Tall Mountain</option>
-                <option value="10">Snowman's Land</option>
-              </optgroup>
-              <optgroup label="Custom maps">
-                <option value="1000">Mushroom Battlefield</option>
-                <option value="1004">Mushroom Raceway</option>
-                <option value="1006">Dolphin Town</option>
-                <option value="1001">CTF/Race Map</option>
-                <option value="1002">Starman Fortress</option>
-                <option value="1003">Glider Jungle</option>
-                <option value="999">Clouded Ruins</option>
-              </optgroup>
-            </select>
-            <SM64Button id="playerNameButton" color="green" onClick={() => {}}>
-              Submit
-            </SM64Button>
-          </div>
-          <SM64Button
-            id="logoutButton"
-            color="red"
-            onClick={() => {
-              setLoggedIn(false)
-            }}
-          >
-            Sign out
-          </SM64Button>
+            <br />
+            <Select options={mapoptions} sx={{width: '300px', mb: 2, color: '#666'}}/>
+            <Flex sx={{ justifyContent: 'space-between'}}>
+              <SM64Button
+                id="logoutButton"
+                color="red"
+                onClick={() => {
+                  setLoggedIn(false)
+                }}
+              >
+                Sign out
+              </SM64Button>
+              <SM64Button id="playerNameButton" color="green" onClick={() => {}}>
+                Submit
+              </SM64Button>
+            </Flex>
         </div>
       )}
       {authMsgFail === '' ? null : <h6 id="authFailMsg"></h6>}
@@ -105,7 +114,7 @@ const ToggleOption = ({ id, labelText, checkedState, onClick }) => {
 const Toggles = () => {
   const [window, dispatch] = useStateValue()
   return (
-    <div className="toggles" sx={{ '> *': { display: 'block' } }}>
+    <div className="toggles" sx={{ display: 'flex', '> *': { display: 'flex', px: 3 } }}>
       <ToggleOption
         id="HHUD"
         labelText={'Hide HUD'}
@@ -131,7 +140,7 @@ const Toggles = () => {
       />
       <ToggleOption
         id="pvp"
-        labelText={`PvP: ${window.misc.pvp ? 'On' : 'Off'}`}
+        labelText={`PvP`}
         checkedState={window.misc.pvp}
         onClick={() => {
           dispatch({
@@ -146,7 +155,14 @@ const Toggles = () => {
 
 const GeneralPanel = () => {
   return (
-    <div sx={{ bg: '#ab9000'}}>
+    <div
+      sx={{
+        display: 'flex',
+        backgroundImage: 'url("/images/backgrounds/yellow-background.png")',
+        justifyContent: 'space-evenly',
+        alignItems: 'center'
+      }}
+    >
       {/* <SM64Button id="startbutton" color="green" disabled onClick={() => {}}>
             Start Game
           </SM64Button> */}

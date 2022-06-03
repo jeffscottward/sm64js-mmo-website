@@ -1,8 +1,9 @@
 /** @jsxImportSource theme-ui **/
+import SM64Button from './SM64Button'
 
 const CustomSkinPanel = () => {
   return (
-    <div id="customizeBorder" sx={{ bg: 'purple'}}>
+    <div id="customizeBorder" sx={{ backgroundImage: 'url("/images/backgrounds/pink-background.png")'  }}>
        <h1 sx={{ my: 0 }}>Character/Skin</h1>
         {/* <!-- Skin presets --> */}
         <div>
@@ -107,36 +108,6 @@ const CustomSkinPanel = () => {
               window.myMario.saveSkin()
             }}
           />
-        </div>
-        {/* <!-- Controls and customization --> */}
-        <div id="pinkControls">
-          <button
-            type="button"
-            className="green-button"
-            onClick={() => {
-              window.switchbox('controlsbox')
-            }}
-          >
-            <div className="sm64button">Customize Controls</div>
-          </button>
-          <button
-            type="button"
-            className="blue-button"
-            onClick={() => {
-              window.switchbox('optionsbox')
-            }}
-          >
-            <div className="sm64button">Options & Misc</div>
-          </button>
-          <button
-            type="button"
-            className="yellow-button"
-            onClick={() => {
-              window.switchbox()
-            }}
-          >
-            <div className="sm64button">Return</div>
-          </button>
         </div>
     </div>
   )

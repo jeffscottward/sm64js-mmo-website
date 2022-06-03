@@ -6,8 +6,8 @@ const MusicSection = () => {
     <div
       id="musicDiv"
       sx={{
+        backgroundImage: 'url("/images/backgrounds/red-background.png")' ,
         h5: { mr: 2 },
-        bg: 'red',
         '> div': { justifyContent: 'space-between', flexWrap: 'nowrap' },
         audio: {
           flex: 1,
